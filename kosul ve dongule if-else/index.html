@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Flowchart - Tailwind</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen flex items-center justify-center bg-gray-50">
+  <!-- Kapsayıcı -->
+  <div class="p-6">
+    <!-- SVG ile akış şeması -->
+    <svg viewBox="0 0 420 520" class="w-[340px] sm:w-[420px] h-auto">
+      <!-- Ok tanımı -->
+      <defs>
+        <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+          <path d="M 0 0 L 10 5 L 0 10 z" class="fill-gray-500"></path>
+        </marker>
+      </defs>
+
+      <!-- START (oval) -->
+      <ellipse cx="210" cy="50" rx="70" ry="28" class="fill-amber-300 stroke-gray-600" stroke-width="2"></ellipse>
+      <text x="210" y="55" text-anchor="middle" class="fill-black font-medium">Start</text>
+
+      <!-- START -> CONDITION oku -->
+      <line x1="210" y1="78" x2="210" y2="140" stroke-width="2" class="stroke-gray-500" marker-end="url(#arrow)"></line>
+
+      <!-- CONDITION (elmas) -->
+      <polygon points="210,170 270,230 210,290 150,230"
+               class="fill-fuchsia-500 stroke-gray-600" stroke-width="2"></polygon>
+      <text x="210" y="235" text-anchor="middle" class="fill-white font-semibold">Condition</text>
+
+      <!-- CONDITION -> IF (true) oku -->
+      <line x1="210" y1="290" x2="210" y2="340" stroke-width="2" class="stroke-gray-500" marker-end="url(#arrow)"></line>
+      <text x="220" y="318" class="fill-gray-600 text-sm">true</text>
+
+      <!-- IF BLOCK (dikdörtgen) -->
+      <rect x="145" y="340" width="130" height="70" rx="10"
+            class="fill-sky-400 stroke-gray-600" stroke-width="2"></rect>
+      <text x="210" y="382" text-anchor="middle" class="fill-white font-semibold">If block</text>
+
+      <!-- IF -> END oku -->
+      <line x1="210" y1="410" x2="210" y2="450" stroke-width="2" class="stroke-gray-500" marker-end="url(#arrow)"></line>
+
+      <!-- FALSE dalı (sağdan aşağı) -->
+      <path d="M270 230 H360 V450 H230"
+            fill="none" stroke-width="2" class="stroke-gray-500" marker-end="url(#arrow)"></path>
+      <text x="300" y="222" class="fill-gray-600 text-sm">false</text>
+
+      <!-- END (oval) -->
+      <ellipse cx="210" cy="480" rx="70" ry="28" class="fill-amber-300 stroke-gray-600" stroke-width="2"></ellipse>
+      <text x="210" y="485" text-anchor="middle" class="fill-black font-medium">End</text>
+    </svg>
+  </div>
+
+ 
+
+  <script>
+let age = 17;
+console.log(age);
+
+if (age > 18) 
+{
+    console.log('ehliyet alabilir');
+} 
+
+else if (age === 18) 
+{
+    console.log('hadi yine iyisin');
+} 
+
+else 
+{
+    console.log('not yet');
+}
+
+
+console.log('___________________________________________');
+/* VE =  &&  isareti    VEYA = ||  */
+
+let country = "turkiye";
+let country2 = "Germany";
+
+if (country === "turkiye" && country2 === "Polska") {  /// iki kosulu da saglamasi gerekiyor 
+    console.log("ulkeye girebilirsiniz");
+} else {
+    console.log("git vize al");
+}
+
+/* Diger kosul durumu VEYA ICIN */
+
+if (country === "turkiye" || country2 === "Polska") {  // birinden birini yap 
+    console.log("ulkeye girebilirsiniz");
+} else {
+    console.log("git vize al");
+}
+
+console.log('___________________________________________');
+
+
+let month = 3;
+let monthName;
+
+if (month == 1) {
+  monthName = "Ocak";
+} else if (month == 2) {
+  monthName = "Şubat";
+} else if (month == 3) {
+  monthName = "Mart";
+} else if (month == 4) {
+  monthName = "Nisan";
+} else {
+  console.log("Nisan sonrası");
+}
+
+console.log(monthName);
+
+console.log('___________________________________________');
+
+
+/* Vicut Kitle endeksi */
+
+let weight = 50 ;
+let height = 1.60;
+let index=weight/ (height*height);
+let result;
+
+if (index < 18.5)
+{
+result="dusuk kilo ";
+}
+else if (index > 29.9)
+{
+result="buyuk";
+}
+else 
+{
+  result = " normal";
+}
+
+console.log(result);
+
+console.log('___________________________________________');
+
+
+  </script>
+</body>
+</html>
