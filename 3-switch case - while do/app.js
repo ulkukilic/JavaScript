@@ -109,3 +109,13 @@ do {
 
 console.log("Şifre doğru! ✅");
 
+
+console.log("-----------------------------------------------------");
+let x = 1;
+
+while (x <= 5) {
+    console.log(x);
+    x += 1;
+}
+
+// x degeri ilk kontrol ediliyor 5 den kucukse 1 artiriliyor ama eger 5 e estir veya buyuk olursa duuryor 

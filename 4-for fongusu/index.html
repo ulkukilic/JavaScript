@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Döngüsü</title>
+</head>
+<body>
+    <h1>For Döngüsü</h1>
+    <p>
+        NOTE: for döngüsünün kullanımı <br>
+        <code>
+            for (let i = 0; i &lt;= 10; i++) { <br>
+                &nbsp;&nbsp;const eleman = array[i]; <br>
+            }
+        </code>
+    </p>
+
+    <script>
+        // 1'den 5'e kadar sayıları konsola yazdırır
+        for (let i = 1; i <= 5; i++) {
+            console.log(i);
+        }
+
+        // ilk once i degerini 1 e esitler daha sonrasinda kontrol eder 5 den kucuk mu sonra i bir arttiti sonra 
+        // ekrana yazdiri 
+
+
+
+        console.log('------------------------------------');
+
+        sum=0;
+        for(let i = 1 ; i <10;i++)
+        {
+            console.log(sum=i+i);    
+        }
+        // toplam degiskeni tanimlandi eger i = 1 yapiyoruz daha sonrainda  i < 10 olana kadar devam et diyoruz i hep bir artiticaz 
+        // sum degerinde i + i topliyoruz yani 
+        //   console.log(sum = i+i);  hep kendi dgerlerini topliyor 
+
+
+        console.log('------------------------------------');
+        <!--!  Ornek  : Cift sayilari yazdirmak 10 dan kucuk -->
+
+        for ( let number=0; number <= 10 ; number += 2)   //  cift sayilari gostermesini istedigimiz icin +=2 seklinde kullanilir 
+        {
+            console.log(number  );
+        }
+
+        console.log('------------------------------------');
+
+        let result = 0 ;
+        for ( let degisken = 1 ; degisken < 5 ; degisken++)
+        {
+           // result = degisken+degisken ; bu sekilde oldugunde  2 -4 - 6- 8 veriyor amacimiz bu degil
+           result = result+degisken;
+        }
+         console.log( "  sonuc " + result );
+
+    </script>
+</body>
+</html>
