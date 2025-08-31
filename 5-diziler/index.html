@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Diziler</title>
+  </head>
+  <body>
+    <script>
+      let marka = ["Stradivarius", "Zara", "Bershka", "Pull and Bear", "H&M"];
+      console.log(marka); // tum dizilerin iceriklerini gosterir
+      console.log(marka[0]);
+      console.log(marka[1]);
+      console.log(marka[4]); // ben x in degerini erismek istiyorum mesela
+      console.log("en sevdigim marka " + marka[0]);
+
+      <!--! Dongu ile dizi markalarini gorme -->
+      for (let i = 0; i < marka.length; i++) {
+        console.log(`Markalar: ${marka[i]}`);
+      }
+
+      // Döngü ile dizi markalarını görme
+      for (let x = 0; x < marka.length; x++) 
+      {
+        console.log(`${x + 1}. Marka: ${marka[x]}`);
+      }
+
+     // İsim listesi Hosgeldin  yazilsin 
+
+      let name = ["EFE", "ECE", "EDA", "AYSE", "ZEYNEP"];
+      for (let j = 0; j < name.length; j++) 
+      {
+        console.log(j);
+        console.log(`Hogeldin  ${name[j]}` );  // j degeri kadar hosgeldiniz yazma islemi yapsin 
+        console.log(name[1])
+      }
+
+
+      
+    </script>
+  </body>
+</html>
