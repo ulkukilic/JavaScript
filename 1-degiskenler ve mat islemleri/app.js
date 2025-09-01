@@ -95,6 +95,7 @@ console.log(story3.length-10);
 BOOL = mantiksal deggerler true veya false gibi   suyun kaynama degeri 10 derecedir false 
 hava cok sicak   true  kullanilir 
 
+
 string = text icerikleri icin 
 
 
@@ -102,3 +103,8 @@ int = 4 4 52
 
 
 */
+let yas = 16;
+let yetiskinMi = (yas >= 18);
+
+console.log(yetiskinMi); 
+// Çıktı: false
