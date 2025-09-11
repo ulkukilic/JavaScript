@@ -118,4 +118,68 @@ while (x <= 5) {
     x += 1;
 }
 
-// x degeri ilk kontrol ediliyor 5 den kucukse 1 artiriliyor ama eger 5 e estir veya buyuk olursa duuryor 
+// x degeri ilk kontrol ediliyor 5 den kucukse
+//  1 artiriliyor ama eger 5 e estir veya buyuk olursa duuryor 
+
+
+/* While dongusu  
+ while (kosul) ture ise 
+{
+    // kosul true oldugu surece calisir
+    // sayac degerini artirmak veya azaltmak gerekir
+}
+
+//! 1 den 10 a kadar yazdiralim 
+let sayac = 1;
+while (sayac <= 10) {
+    console.log(sayac);
+    sayac++; // sayaci 1 artir
+}       
+// sayac degeri 10 dan buyuk olunca durur
+
+//! 1 den 10 a kadar cift sayilari yazdiralim
+let sayac2 = 1;
+while (sayac2 <= 10) {
+    if (sayac2 % 2 === 0) {
+        console.log(sayac2);
+    }   
+    sayac2++; // sayaci 1 artir
+}
+
+
+//! 1 den 10 a kadar tek sayilari yazdiralim
+let sayac3 = 1;
+while (sayac3 <= 10) {
+    if (sayac3 % 2 !== 0) {
+        console.log(sayac3);
+    }
+
+    sayac3++; // sayaci 1 artir
+}   
+ 
+//!  asal sayilari yazdiralim 1 den 10 a kadar
+let sayac4 = 1;
+while (sayac4 <= 10) {
+    let asal = true;    
+    if (sayac4 <= 1) {
+        asal = false;
+    } else {
+        for (let i = 2; i < sayac4; i++) {
+            if (sayac4 % i === 0) {
+                asal = false;
+                break;
+            }
+        }
+    }         
+    sayac4++; // sayaci +1 
+}       
+
+//! kullanici 0 girene kadar sayi girmeye devam etsin 
+let sayi;
+
+//! 1 den n  sayisina kadar sayilari toplayalim
+
+
+
+//!
+*/
