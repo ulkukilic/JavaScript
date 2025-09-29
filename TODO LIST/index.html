@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src = "https://cdn.tailwindcss.com"></script>
+
+</head>
+<body>
+    <h1 class="text-2xl font-bold text-center"> TODO LIST </h1>
+    <div class="container mx-auto w-1/2">
+        <form>
+            <div class="border flex ">
+                <input type="text" id="taskInput" placeholder="Enter a new task" class='w-full'>
+                <button id="addTaskButton" type="submit" class="border-1 px-6 bg-green-500 text-white">Add Task</button>
+            </div>
+        </form>
+        <div class="flex justify-end my-5"></div>
+            <button id="clearTasksButton" class="p-3 bg-red-400  text-white">Clear Tasks</button>
+        </div>
+    </div>
+    <ul id="taskList"></ul>
+</body>
+</html>
