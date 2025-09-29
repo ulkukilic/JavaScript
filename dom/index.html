@@ -9,24 +9,58 @@
     <h1>'Hello World'</h1>
     <h2 id="subtitle">Subtitle</h2>
     <p class="text">This is a paragraph.</p>
+
+    <h2>Student List </h2>
+    <ul>
+        <li class="item">ECE EFE</li>
+        <li class="item">MEHMET DUZ</li>    
+        <li class="item">ALLAHIM SEN SABIR VER</li>
+        <li class="item">FATMA YILMAZ</li>
+        <li class="item">AYSE YILMAZ</li>
+        <li class="item">HATICE YILMAZ</li>
+        <li class="item">EMINE YILMAZ</li>
+    </ul>
 </body>
 <script>
-    const title = document.querySelector('h1');
-    // title.remove(); // Removes the <h1> element from the DOM
-    console.log(title); // Logs the removed <h1> element  to the console
+    //querySelector ne ise yariyor ?
+    //querySelector secme islemi gorur html de secim yapar ve degsitiriesiniz 
+  document.querySelector('h1').innerHTML = 'Hello World JS'
+  document.querySelector('#subtitle').innerHTML = 'Subtitle JS'
+  const title = document.querySelector('.text')
+  title.innerHTML = 'This is a paragraph JS';
+  title.style.color = 'red';
 
-    //DOM NEDIR ?  Document Object Model 
-    //DOM HTML, XML gibi belgelerin yapısını temsil eden bir programlama arayüzüdür.
-    //DOM, belgeleri ağaç yapısı olarak temsil eder ve her düğüm (node) belgenin bir parçasını temsil eder.
-    //DOM, JavaScript gibi programlama dilleri aracılığıyla belgeleri dinamik olarak değiştirmeyi mümkün kılar.
-    //DOM, web sayfalarının içeriğini, yapısını ve stilini dinamik olarak değiştirmek için kullanılır.
-    //DOM, web tarayıcılarında yaygın olarak kullanılır ve web sayfalarının etkileşimli hale getirilmesini sağlar.  
+    //querySelectorAll ne ise yariyor ?
+    //querySelectorAll secme islemi gorur html de secim yapar ve degsitiriesiniz
+    const items = document.querySelectorAll('.item');
+    items.forEach(item => {
+        item.innerHTML += ' - updated';  // her bir item a - updated ekler
+        item.style.color = 'blue'; // her bir item in rengini mavi yapar
+    });
 
-   title.style.color = 'red'; // This line will not work as expected because the element has been removed
+    //! Tekli seciciler JS
+    const list = document.querySelector("ul");
+    document.querySelector("li").style.color = "red";
+    document.querySelector("li:last-child").style.color = "blue";
+    document.querySelector("li:nth-child(3)").style.color = "purple";
+    document.querySelector("li:nth-child(2)").style.color = "purple";
+    document.querySelector("li:nth-child(4)").style.color = "purple";
+    console.log(list);
 
-   const subtitle = document.getElementById('subtitle');
-   subtitle.style.color = 'blue';
 
-  // . classi secer # id yi secer 
-</script>
+    //! Coklu seciciler JS
+    const items2 = document.getElementsByClassName("item");
+    console.log(items2); // bu sadece console yazdirma islemi yapar
+    items2[0].style.color = "orange";
+    items2[1].style.color = "orange";
+    for (let i = 0; i < items2.length; i++) {
+        items2[i].style.fontWeight = "bold"; // tum itemlerin fontunu kalin yapar
+    }
+
+
+    // bir diger for kullanimi 
+    for (let item of items2) { // items2 icindeki her bir item icin doner 
+        item.style.backgroundColor = "lightgray"; // tum itemlerin arka plan rengini acik gri yapar
+    }
+  </script>
 </html>
