@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>'Hello World'</h1>
+    <h2 id="subtitle">Subtitle</h2>
+    <p class="text">This is a paragraph.</p>
+</body>
+<script>
+    const title = document.querySelector('h1');
+    // title.remove(); // Removes the <h1> element from the DOM
+    console.log(title); // Logs the removed <h1> element  to the console
+
+    //DOM NEDIR ?  Document Object Model 
+    //DOM HTML, XML gibi belgelerin yapısını temsil eden bir programlama arayüzüdür.
+    //DOM, belgeleri ağaç yapısı olarak temsil eder ve her düğüm (node) belgenin bir parçasını temsil eder.
+    //DOM, JavaScript gibi programlama dilleri aracılığıyla belgeleri dinamik olarak değiştirmeyi mümkün kılar.
+    //DOM, web sayfalarının içeriğini, yapısını ve stilini dinamik olarak değiştirmek için kullanılır.
+    //DOM, web tarayıcılarında yaygın olarak kullanılır ve web sayfalarının etkileşimli hale getirilmesini sağlar.  
+
+   title.style.color = 'red'; // This line will not work as expected because the element has been removed
+
+   const subtitle = document.getElementById('subtitle');
+   subtitle.style.color = 'blue';
+
+  // . classi secer # id yi secer 
+</script>
+</html>
