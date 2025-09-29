@@ -1,25 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src = "https://cdn.tailwindcss.com"></script>
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Todo List</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    <h1 class="text-2xl font-bold text-center"> TODO LIST </h1>
-    <div class="container mx-auto w-1/2">
-        <form>
-            <div class="border flex ">
-                <input type="text" id="taskInput" placeholder="Enter a new task" class='w-full'>
-                <button id="addTaskButton" type="submit" class="border-1 px-6 bg-green-500 text-white">Add Task</button>
-            </div>
-        </form>
-        <div class="flex justify-end my-5"></div>
-            <button id="clearTasksButton" class="p-3 bg-red-400  text-white">Clear Tasks</button>
-        </div>
+<body class="bg-gray-100 min-h-screen">
+  <h1 class="text-2xl font-bold text-center my-6">TODO LIST</h1>
+
+  <div class="container mx-auto w-1/2">
+    <!-- Form: Yeni görev eklemek için -->
+    <form class="mb-4">
+      <div class="border flex">
+        <input 
+          type="text" 
+          id="taskInput" 
+          placeholder="Enter a new task" 
+          class="w-full px-2 py-2 outline-none"
+        >
+        <button 
+          id="addTaskButton" 
+          type="submit" 
+          class="px-6 bg-green-500 text-white hover:bg-green-600"
+        >
+          Add Task
+        </button>
+      </div>
+    </form>
+
+    <!-- Clear Button: Tüm görevleri temizle -->
+    <div class="flex justify-end mb-6">
+      <button 
+        id="clearTasksButton" 
+        class="px-4 py-2 bg-red-400 text-white rounded hover:bg-red-500"
+      >
+        Clear Tasks
+      </button>
     </div>
-    <ul id="taskList"></ul>
+
+    <!-- Task List: Görevler buraya eklenecek -->
+    <ul id="taskList" class="border rounded p-4 space-y-3 bg-white">
+      <!-- Örnek görev (ilk başta listede görünecek) -->
+      <li class="flex justify-between items-center border-b pb-2">
+        <span>Todo Name</span>
+        <button class="text-red-500 hover:text-red-700 delete-btn">Delete</button>
+      </li>
+    </ul>
+  </div>
+
+<script>
+  // 1- HTML elementlerini seçiyoruz
+  const textInputDom = document.getElementById('taskInput'); // input kutusu
+  const addTodDom = document.getElementById("addTaskButton"); // "Add Task" butonu
+  const clearTodDom = document.getElementById("clearTasksButton"); // "Clear Tasks" butonu
+  const taskListDom = document.getElementById("taskList"); // Görevlerin listeleneceği ul
+
+  // 2- Inputa yazılan değeri saklamak için değişken
+  let textInputDomValue = ""; 
+
+  // 3- Input değiştiğinde değerimizi güncelliyoruz
+  textInputDom.addEventListener('change', function(event)  {
+    textInputDomValue = event.target.value; // input değerini al
+    console.log(textInputDomValue); // kontrol için konsola yaz
+  });
+
+  // 4- "Add Task" butonuna tıklandığında yeni görev eklemek
+  addTodDom.addEventListener('click', function(event) {
+    event.preventDefault(); // sayfanın yenilenmesini engelle
+
+    // Eğer input boşsa görev ekleme
+    if(textInputDom.value.trim() === "") return;
+
+    // Yeni li oluşturuyoruz
+    const newTask = document.createElement('li');
+    newTask.className = "flex justify-between items-center border-b pb-2";
+
+    // Görev adı
+    const taskName = document.createElement('span');
+    taskName.textContent = textInputDom.value;
+
+    // Silme butonu
+    const deleteBtn = document.createElement('button');
+    deleteBtn.textContent = "Delete";
+    deleteBtn.className = "text-red-500 hover:text-red-700 delete-btn";
+
+    // Silme butonuna tıklayınca çalışacak olay
+    deleteBtn.addEventListener('click', function() {
+      taskListDom.removeChild(newTask); // ilgili görevi listeden sil
+    });
+
+    // li içine span ve delete butonunu ekle
+    newTask.appendChild(taskName);
+    newTask.appendChild(deleteBtn);
+
+    // li'yi ul içine ekle
+    taskListDom.appendChild(newTask);
+
+    // inputu temizle
+    textInputDom.value = "";
+  });
+
+  // 5- "Clear Tasks" butonuna tıklandığında tüm görevleri temizle
+  clearTodDom.addEventListener('click', function() {
+    taskListDom.innerHTML = ""; // ul içindeki tüm li'leri sil
+  });
+
+
+   // Not: addEventListener iki şey ister:
+  // 1- Ne olunca çalışsın? (örneğin 'change', 'click')
+  // 2- Olunca ne yapsın? (bizim yazdığımız fonksiyon)
+
+</script>
+
 </body>
 </html>
